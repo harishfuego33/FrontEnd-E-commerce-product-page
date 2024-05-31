@@ -7,11 +7,11 @@
   --GrayishBlue: hsl(220, 14%, 75%);
   --LightGrayishBlue: hsl(223, 64%, 98%);
   --White: hsl(0, 0%, 100%);
+  --ff-size-14: 1.4rem;
 }
 @font-face {
   font-family: "Kumbh Sans";
   src: url("/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
-  font-weight: normal;
   font-style: normal;
 }
 
@@ -38,10 +38,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
-  /* padding: 2rem 10rem; */
-  margin-inline: 10rem;
+  height: 10rem;
+  margin-inline: 15rem;
   border-bottom: 1px solid var(--GrayishBlue);
+  position: relative;
 }
 .navBar__options {
   display: flex;
@@ -49,7 +49,6 @@ body {
   cursor: pointer;
   gap: 2rem;
 }
-
 .navBar__option {
   display: flex;
   align-items: center;
@@ -85,30 +84,174 @@ body {
 .navBar__heading {
   font-size: 2.7rem;
   padding-bottom: 1rem;
+  font-weight: 900;
+  word-spacing: 3rem;
+  margin-right: 3rem;
+  cursor: default;
 }
-
-.sneaker__section {
-  margin-inline: 10rem;
-  width: 100%;
+.cart-box {
+  position: absolute;
+  right: 0;
+  width: 30rem;
+  min-height: 20rem;
+  background-color: var(--LightGrayishBlue);
+  transform: translate(4rem, 13rem);
+  box-shadow: 3px 2px 18px rgb(79, 77, 77);
+}
+.cart {
+  height: 4rem;
+  padding: 1rem;
+}
+.cart span {
+  font-size: 1.4rem;
+  color: var(--DarkGrayishBlue);
 }
 .sneaker__section {
+  margin-inline: 15rem;
   display: flex;
   flex-direction: row;
-  padding-block: 10rem;
+  gap: 7rem;
+  padding-block: 7rem;
+}
+.sneaker__gallery {
+  width: 50%;
 }
 .sneaker__primary {
-  height: 50rem;
-  width: 50rem;
+  height: 38rem;
+  width: 38rem;
   border-radius: 2rem;
   overflow: hidden;
+  margin: 0 auto;
 }
 .sneaker__pictures {
   display: flex;
+  justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 .sneaker__picture {
   overflow: hidden;
   border-radius: 1rem;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, 0.525);
+  opacity: 0;
+  border-radius: inherit;
+}
+.sneaker__info {
+  width: 50%;
+}
+.sneaker__infos {
+  margin: 5rem 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.sneaker__company {
+  font-size: var(--ff-size-12, 1.2rem);
+  color: var(--VeryDarkBlue);
+  letter-spacing: 3px;
+}
+.sneaker__edition {
+  font-size: 4rem;
+  line-height: 1;
+  src: url("../public/static/KumbhSans-Bold.ttf") format("truetype");
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+}
+.sneaker__discription {
+  font-size: 1.6rem;
+  color: var(--DarkGrayishBlue);
+  line-height: 2.5rem;
+}
+.sneaker__price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: Black;
+}
+.sneaker__offer-bg {
+  display: inline-block;
+  margin-left: 1rem;
+  background: black;
+  border-radius: 3px;
+}
+.sneaker__offer {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--White);
+  margin: 0.5rem 1rem;
+}
+.sneaker__price-cut {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+.sneaker__cart {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 4rem;
+  color: black;
+}
+.sneaker__counter {
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  height: 4rem;
+}
+.sneaker__counter span {
+  display: inline-block;
+  margin-inline: 2rem;
+  font-size: 1.8rem;
+}
+.sneaker__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: inherit;
+  color: var(--Orange);
+  border: none;
+  font-size: 3rem;
+  background-color: transparent;
+}
+.add-to-cart {
+  height: inherit;
+  width: 50%;
+  background-color: var(--Orange);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.cart-img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.sneaker__btn:active,
+.sneaker__btn:hover {
+  background-color: var(--PaleOrange);
+}
+
+.add-to-cart:hover {
+  background-color: hsla(26, 100%, 55%, 0.735);
+}
+.sneaker__picture:hover > .overlay {
+  border: 4px solid var(--Orange);
+  opacity: 1;
+  z-index: 1;
+}
+.active .overlay {
+  border: 4px solid var(--Orange);
+  opacity: 1;
+  opacity: 1;
 }

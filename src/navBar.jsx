@@ -4,9 +4,9 @@ const Nav = () => {
   return (
     <nav className="sneaker__navBar">
       <ul className="navBar__options">
-        {/* <li className="navBar__option"> */}
-        <h1 className="navBar__heading">sneakers</h1>
-        {/* </li> */}
+        <h1 className="navBar__heading">
+          <img src="./src/images/logo.svg" alt="heading-logo" />
+        </h1>
         <li className="navBar__option">Collections</li>
         <li className="navBar__option">Men</li>
         <li className="navBar__option">Women</li>
@@ -24,6 +24,12 @@ const Nav = () => {
             className="profile__box-img"
           />
         </div>
+      </div>
+      <div className="cart-box">
+        <div className="cart">
+          <span>Card</span>
+        </div>
+        <hr />
       </div>
     </nav>
   );
