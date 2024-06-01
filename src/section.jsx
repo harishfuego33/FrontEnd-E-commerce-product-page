@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CartItems from "./cart";
 const Section = () => {
   const [active, setActive] = useState(1);
   const [counter, setCounter] = useState(0);
@@ -105,6 +106,21 @@ const Section = () => {
           </div>
         </div>
       </article>
+      <div className="cart-box">
+        <div className="cart">
+          <span>Card</span>
+        </div>
+        <hr />
+        <CartItems
+          imgUrl="./src/images/image-product-1-thumbnail.jpg"
+          name="Fall Limited Edition Sneaker"
+          cost="125.00"
+          quantity="1"
+        />
+        <button className={`add-to-cart mar-1`}>
+          <span className="add-to-cart-text">check out</span>
+        </button>
+      </div>
     </section>
   );
 };

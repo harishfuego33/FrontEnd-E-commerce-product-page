@@ -25,12 +25,6 @@ const Nav = () => {
           />
         </div>
       </div>
-      <div className="cart-box">
-        <div className="cart">
-          <span>Card</span>
-        </div>
-        <hr />
-      </div>
     </nav>
   );
 };
