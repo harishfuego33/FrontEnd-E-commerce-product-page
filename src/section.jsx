@@ -29,15 +29,35 @@ const Section = ({ setcartCounter, visible }) => {
   function downcount() {
     if (counter > 0) setCounter(counter - 1);
   }
+  function up() {
+    if (active < 4) setActive(active + 1);
+  }
+  function down() {
+    if (active > 1) setActive(active - 1);
+  }
   return (
     <section className="sneaker__section">
       <div className="sneaker__gallery">
         <div className="sneaker__primary">
+          <button className="img-btn forward-btn" onClick={() => down()}>
+            <img
+              src="./src/images/icon-previous.svg"
+              alt="icon-previous"
+              className="btn-fwrd"
+            />
+          </button>
           <img
             src={`./src/images/image-product-${active}.jpg`}
             alt="sneaker-Image"
             className="profile__box-img"
           />
+          <button className=" img-btn backward-btn" onClick={() => up()}>
+            <img
+              src="./src/images/icon-next.svg"
+              alt="icon-previous"
+              className="btn-fwrd"
+            />
+          </button>
         </div>
         <div className="sneaker__pictures">
           <div

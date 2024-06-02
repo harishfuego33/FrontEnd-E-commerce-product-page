@@ -185,6 +185,29 @@ body {
   border-radius: 2rem;
   overflow: hidden;
   margin: 0 auto;
+  position: relative;
+}
+.img-btn {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  top: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.forward-btn {
+  left: 1rem;
+}
+.backward-btn {
+  right: 1rem;
+}
+.btn-fwrd {
+  width: 1rem;
+  height: 1rem;
 }
 .sneaker__pictures {
   display: flex;
@@ -345,6 +368,7 @@ body {
     margin-inline: 0rem;
     width: 100%;
     padding-block: 1rem;
+    gap: 2rem;
   }
   .sneaker__info,
   .sneaker__gallery {
@@ -352,6 +376,7 @@ body {
   }
   .sneaker__primary {
     width: 100%;
+    border-radius: 0;
   }
   .sneaker__infos {
     margin: 0 1rem;
@@ -361,5 +386,12 @@ body {
     gap: 0;
     flex-direction: column;
     align-items: initial;
+    gap: 1rem;
+  }
+  .add-to-cart {
+    width: 100%;
+  }
+  .img-btn {
+    display: flex;
   }
 }
