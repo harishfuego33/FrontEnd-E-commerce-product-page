@@ -1,15 +1,34 @@
 import { useState } from "react";
-import CartItems from "./cart";
-const Section = () => {
+// import Carts from "./cart";
+const Section = ({ setcartCounter, visible }) => {
   const [active, setActive] = useState(1);
+  // const [cart, setCart] = useState(0);
   const [counter, setCounter] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addItemToCart = () => {
+    const newItem = {
+      id: Date.now(), // unique id
+      imageUrl: "./src/images/image-product-1-thumbnail.jpg",
+      description: "Fall Limited Edition Sneaker",
+      price: 125.0,
+      quantity: counter,
+    };
+    setCartItems([newItem]);
+    setcartCounter(counter);
+  };
+  const deleteItemFromCart = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+    setCounter(0);
+    setcartCounter(0);
+  };
+
   function upcount() {
     setCounter(counter + 1);
   }
   function downcount() {
     if (counter > 0) setCounter(counter - 1);
   }
-
   return (
     <section className="sneaker__section">
       <div className="sneaker__gallery">
@@ -76,12 +95,12 @@ const Section = () => {
             Featuring a durable rubber outer sole,they ll withstand everything
             the weather can offer.
           </p>
-          <p className="sneaker__price">
+          <div className="sneaker__price">
             $125.00{" "}
             <div className="sneaker__offer-bg">
               <span className="sneaker__offer">50%</span>
             </div>
-          </p>
+          </div>
           <p className="sneaker__price-cut">
             <s>$250.00</s>
           </p>
@@ -95,7 +114,7 @@ const Section = () => {
                 <img src="./src/images/icon-plus.svg" alt="plus" />
               </button>
             </div>
-            <button className="add-to-cart">
+            <button className="add-to-cart" onClick={() => addItemToCart()}>
               <img
                 src="./src/images/icon-cart.svg"
                 alt="addtocart"
@@ -106,22 +125,53 @@ const Section = () => {
           </div>
         </div>
       </article>
-      <div className="cart-box">
+      <div className={`cart-box ${visible ? "" : "hidden"}`}>
         <div className="cart">
           <span>Card</span>
         </div>
         <hr />
-        <CartItems
-          imgUrl="./src/images/image-product-1-thumbnail.jpg"
-          name="Fall Limited Edition Sneaker"
-          cost="125.00"
-          quantity="1"
-        />
-        <button className={`add-to-cart mar-1`}>
+        {cartItems.length < 1 ? (
+          <p className="cart-empty">Your cart is empty. </p>
+        ) : (
+          cartItems.map((cartDetails, index) => (
+            <Carts
+              key={index}
+              id={cartDetails.id}
+              imgUrl={cartDetails.imageUrl}
+              name={cartDetails.description}
+              cost={cartDetails.price}
+              quantity={cartDetails.quantity}
+              deleteItemFromCart={deleteItemFromCart}
+            />
+          ))
+        )}
+        <button
+          className={`add-to-cart mar-1 ${
+            cartItems.length < 1 ? "hidden" : ""
+          }`}
+        >
           <span className="add-to-cart-text">check out</span>
         </button>
       </div>
     </section>
+  );
+};
+const Carts = ({ id, imgUrl, name, cost, quantity, deleteItemFromCart }) => {
+  return (
+    <div className="cart-item">
+      <div className="cart-img-box">
+        <img src={imgUrl} alt="sneaker__image" className="profile__box-img" />
+      </div>
+      <div className="cart-info">
+        <p className="sneaker__discription">{name}</p>
+        <p className="sneaker__discription">
+          ${cost} X {quantity}.00 <strong> ${cost * quantity}.00</strong>
+        </p>
+      </div>
+      <div className="delete-btn" onClick={() => deleteItemFromCart(id)}>
+        <img src="./src/images/icon-delete.svg" alt="delete" />
+      </div>
+    </div>
   );
 };
 export default Section;

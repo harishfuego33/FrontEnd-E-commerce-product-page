@@ -26,15 +26,21 @@ html {
   font-size: 62.5%;
 }
 body {
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
   font-family: "Kumbh Sans", sans-serif;
+}
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 .mar-1 {
   margin: 1rem;
 }
 .sneaker__main {
   width: 100%;
+  min-height: 360px;
+  position: relative;
   min-height: 100vh;
 }
 .sneaker__navBar {
@@ -70,6 +76,29 @@ body {
   align-items: center;
   gap: 4rem;
 }
+.log__box {
+  position: relative;
+}
+.log__box::after {
+  content: attr(data-line);
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  transform: translate(-1px, -3px);
+  color: white;
+}
+.log__box::before {
+  content: "";
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  transform: translate(3px, -2px);
+  height: 1rem;
+  width: 1.5rem;
+  background-color: var(--Orange);
+  border-radius: 5px;
+}
+
 .profile__box {
   width: 4.5rem;
   height: 4.5rem;
@@ -91,6 +120,10 @@ body {
   word-spacing: 3rem;
   margin-right: 3rem;
   cursor: default;
+}
+.neaker__nav-btn {
+  display: flex;
+  align-items: center;
 }
 .cart-box {
   position: absolute;
@@ -130,6 +163,12 @@ body {
   width: 2rem;
   height: 2rem;
 }
+.cart-empty {
+  align-self: center;
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  color: gray;
+}
 .sneaker__section {
   margin-inline: 15rem;
   display: flex;
@@ -142,8 +181,7 @@ body {
   width: 50%;
 }
 .sneaker__primary {
-  height: 38rem;
-  width: 38rem;
+  width: 85%;
   border-radius: 2rem;
   overflow: hidden;
   margin: 0 auto;
@@ -231,7 +269,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 4rem;
+  /* height: 4rem; */
 }
 .sneaker__counter span {
   display: inline-block;
@@ -243,7 +281,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 40%;
-  height: inherit;
+  height: 4rem;
   color: var(--Orange);
   border: none;
   font-size: 3rem;
@@ -287,4 +325,41 @@ body {
 }
 .hidden {
   display: none;
+}
+@media (max-width: 936px) {
+  .navBar__options {
+    display: none;
+    width: 100%;
+  }
+  .sneaker__main {
+    width: 100%;
+  }
+  .sneaker__pictures {
+    display: none;
+  }
+  .sneaker__navBar {
+    margin-inline: 1rem;
+  }
+  .sneaker__section {
+    flex-direction: column;
+    margin-inline: 0rem;
+    width: 100%;
+    padding-block: 1rem;
+  }
+  .sneaker__info,
+  .sneaker__gallery {
+    width: 100%;
+  }
+  .sneaker__primary {
+    width: 100%;
+  }
+  .sneaker__infos {
+    margin: 0 1rem;
+  }
+  .sneaker__cart {
+    height: 8rem;
+    gap: 0;
+    flex-direction: column;
+    align-items: initial;
+  }
 }
