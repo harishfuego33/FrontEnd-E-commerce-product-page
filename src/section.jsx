@@ -116,14 +116,16 @@ const Section = ({ setcartCounter, visible }) => {
             the weather can offer.
           </p>
           <div className="sneaker__price">
-            $125.00{" "}
-            <div className="sneaker__offer-bg">
-              <span className="sneaker__offer">50%</span>
+            <div>
+              $125.00{" "}
+              <div className="sneaker__offer-bg">
+                <span className="sneaker__offer">50%</span>
+              </div>
             </div>
+            <p className="sneaker__price-cut">
+              <s>$250.00</s>
+            </p>
           </div>
-          <p className="sneaker__price-cut">
-            <s>$250.00</s>
-          </p>
           <div className="sneaker__cart">
             <div className="sneaker__counter">
               <button className="sneaker__btn" onClick={() => downcount()}>
@@ -166,9 +168,7 @@ const Section = ({ setcartCounter, visible }) => {
           ))
         )}
         <button
-          className={`add-to-cart mar-1 ${
-            cartItems.length < 1 ? "hidden" : ""
-          }`}
+          className={`add-to-cart w-80 ${cartItems.length < 1 ? "hidden" : ""}`}
         >
           <span className="add-to-cart-text">check out</span>
         </button>
