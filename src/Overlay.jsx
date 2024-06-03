@@ -15,7 +15,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
           className="close-btn"
           onClick={() => setOverlayVisible(!overlayVisible)}
         >
-          <img src="../public/images/icon-close.svg" alt="close-button" />
+          <img src=".../public/images/icon-close.svg" alt="close-button" />
         </div>
         <div className="sneaker__primary">
           <button
@@ -23,13 +23,13 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
             onClick={() => down()}
           >
             <img
-              src="./public/images/icon-previous.svg"
+              src="../public/images/icon-previous.svg"
               alt="icon-previous"
               className="btn-fwrd"
             />
           </button>
           <img
-            src={`./public/images/image-product-${active}.jpg`}
+            src={`../public/images/image-product-${active}.jpg`}
             alt="sneaker-Image"
             className="profile__box-img"
           />
@@ -38,7 +38,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
             onClick={() => up()}
           >
             <img
-              src="./public/images/icon-next.svg"
+              src="../public/images/icon-next.svg"
               alt="icon-previous"
               className="btn-fwrd "
             />
@@ -51,7 +51,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
           >
             <span className="overlay"></span>
             <img
-              src="./public/images/image-product-1-thumbnail.jpg"
+              src="../public/images/image-product-1-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -62,7 +62,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
           >
             <span className="overlay"></span>
             <img
-              src="./public/images/image-product-2-thumbnail.jpg"
+              src="../public/images/image-product-2-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -73,7 +73,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
           >
             <span className="overlay"></span>
             <img
-              src="./public/images/image-product-3-thumbnail.jpg"
+              src="../public/images/image-product-3-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -84,7 +84,7 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
           >
             <span className="overlay"></span>
             <img
-              src="./public/images/image-product-4-thumbnail.jpg"
+              src="../public/images/image-product-4-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />

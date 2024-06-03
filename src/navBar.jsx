@@ -15,14 +15,14 @@ const Nav = ({
           onClick={() => setvisibleHamMenu(!visibleHamMenu)}
         >
           <img
-            src="./public/images/icon-menu.svg"
+            src="../public/images/icon-menu.svg"
             alt="heading-logo"
             className="profile__box-img"
           />
         </button>
         <div className="navBar__heading">
           <img
-            src="./public/images/logo.svg"
+            src="../public/images/logo.svg"
             alt="heading-logo"
             className="profile__box-img"
           />
