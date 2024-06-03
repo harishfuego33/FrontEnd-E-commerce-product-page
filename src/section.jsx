@@ -14,7 +14,7 @@ const Section = ({
   const addItemToCart = () => {
     const newItem = {
       id: Date.now(), // unique id
-      imageUrl: "../public/images/image-product-1-thumbnail.jpg",
+      imageUrl: "/images/image-product-1-thumbnail.jpg",
       description: "Fall Limited Edition Sneaker",
       price: 125.0,
       quantity: counter,
@@ -49,19 +49,19 @@ const Section = ({
         >
           <button className="img-btn forward-btn" onClick={() => down()}>
             <img
-              src="./public/images/icon-previous.svg"
+              src="/images/icon-previous.svg"
               alt="icon-previous"
               className="btn-fwrd"
             />
           </button>
           <img
-            src={`../public/images/image-product-${active}.jpg`}
+            src={`/images/image-product-${active}.jpg`}
             alt="sneaker-Image"
             className="profile__box-img"
           />
           <button className=" img-btn backward-btn" onClick={() => up()}>
             <img
-              src="../public/images/icon-next.svg"
+              src="/images/icon-next.svg"
               alt="icon-previous"
               className="btn-fwrd"
             />
@@ -74,7 +74,7 @@ const Section = ({
           >
             <span className="overlay"></span>
             <img
-              src="../public/images/image-product-1-thumbnail.jpg"
+              src="/images/image-product-1-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -85,7 +85,7 @@ const Section = ({
           >
             <span className="overlay"></span>
             <img
-              src="../public/images/image-product-2-thumbnail.jpg"
+              src="/images/image-product-2-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -96,7 +96,7 @@ const Section = ({
           >
             <span className="overlay"></span>
             <img
-              src="../public/images/image-product-3-thumbnail.jpg"
+              src="/images/image-product-3-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -107,7 +107,7 @@ const Section = ({
           >
             <span className="overlay"></span>
             <img
-              src="../public/images/image-product-4-thumbnail.jpg"
+              src="/images/image-product-4-thumbnail.jpg"
               alt="sneaker__image"
               className="profile__box-img"
             />
@@ -137,16 +137,16 @@ const Section = ({
           <div className="sneaker__cart">
             <div className="sneaker__counter">
               <button className="sneaker__btn" onClick={() => downcount()}>
-                <img src="../public/images/icon-minus.svg" alt="minus" />
+                <img src="/images/icon-minus.svg" alt="minus" />
               </button>
               <span>{counter}</span>
               <button className="sneaker__btn" onClick={() => upcount()}>
-                <img src="../public/images/icon-plus.svg" alt="plus" />
+                <img src="/images/icon-plus.svg" alt="plus" />
               </button>
             </div>
             <button className="add-to-cart" onClick={() => addItemToCart()}>
               <img
-                src="../public/images/icon-cart.svg"
+                src="/images/icon-cart.svg"
                 alt="addtocart"
                 className="cart-img"
               />
@@ -199,7 +199,7 @@ const Carts = ({ id, imgUrl, name, cost, quantity, deleteItemFromCart }) => {
         </p>
       </div>
       <div className="delete-btn" onClick={() => deleteItemFromCart(id)}>
-        <img src="../public/images/icon-delete.svg" alt="delete" />
+        <img src="images/icon-delete.svg" alt="delete" />
       </div>
     </div>
   );

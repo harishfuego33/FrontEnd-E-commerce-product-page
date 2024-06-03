@@ -1,5 +1,3 @@
-import cartIcon from "../public/images/icon-cart.svg";
-import profileImage from "../public/images/image-avatar.png";
 const Nav = ({
   cartcounter,
   setVisible,
@@ -15,14 +13,14 @@ const Nav = ({
           onClick={() => setvisibleHamMenu(!visibleHamMenu)}
         >
           <img
-            src="../public/images/icon-menu.svg"
+            src=" /images/icon-menu.svg"
             alt="heading-logo"
             className="profile__box-img"
           />
         </button>
         <div className="navBar__heading">
           <img
-            src="../public/images/logo.svg"
+            src=" /images/logo.svg"
             alt="heading-logo"
             className="profile__box-img"
           />
@@ -41,11 +39,15 @@ const Nav = ({
           className="log__box"
           onClick={() => setVisible(!visible)}
         >
-          <img src={cartIcon} alt="cart_icon" className="log__box-img" />
+          <img
+            src="/images/icon-cart.svg"
+            alt="cart_icon"
+            className="log__box-img"
+          />
         </div>
         <div className="profile__box">
           <img
-            src={profileImage}
+            src="/images/image-avatar.png"
             alt="Profileimage"
             className="profile__box-img"
           />
