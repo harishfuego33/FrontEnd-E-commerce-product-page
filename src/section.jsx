@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 // import Carts from "./cart";
 const Section = ({
   setcartCounter,
@@ -185,6 +186,8 @@ const Section = ({
   );
 };
 const Carts = ({ id, imgUrl, name, cost, quantity, deleteItemFromCart }) => {
+  // Component code here
+
   return (
     <div className="cart-item">
       <div className="cart-img-box">
