@@ -42,6 +42,7 @@ body {
   min-height: 360px;
   position: relative;
   min-height: 100vh;
+  transition: all 0.3s;
 }
 .sneaker__navBar {
   display: flex;
@@ -114,16 +115,16 @@ body {
   object-fit: cover;
 }
 .navBar__heading {
-  font-size: 2.7rem;
-  padding-bottom: 1rem;
-  font-weight: 900;
-  word-spacing: 3rem;
+  width: 13rem;
   margin-right: 3rem;
   cursor: default;
 }
 .neaker__nav-btn {
   display: flex;
   align-items: center;
+}
+.menu {
+  display: none;
 }
 .cart-box {
   position: absolute;
@@ -181,6 +182,7 @@ body {
 }
 .sneaker__gallery {
   width: 50%;
+  position: relative;
 }
 .sneaker__primary {
   width: 85%;
@@ -315,7 +317,7 @@ body {
 }
 .add-to-cart {
   height: 4rem;
-  width: 90%;
+  width: 100%;
   background-color: var(--Orange);
   border: none;
   border-radius: 0.5rem;
@@ -348,13 +350,69 @@ body {
   opacity: 1;
   opacity: 1;
 }
-.hidden {
-  display: none;
-}
 .w-80 {
+  width: 90%;
   align-self: center;
 }
+
+.sneaker__overlay {
+  background: rgba(64, 64, 64, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.w-50 {
+  width: 50rem;
+}
+.visible {
+  display: flex;
+}
+.hidden {
+  display: none !important;
+}
+.close-btn {
+  position: absolute;
+  top: -3rem;
+  right: 5rem;
+  z-index: 7;
+}
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 60%;
+  background-color: white;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+}
+.slideIn {
+  transform: translateX(0%);
+}
+.slide__box {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+}
+.slide__options {
+  margin-top: 3rem;
+}
+.slide__option {
+  list-style: none;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
 @media (max-width: 936px) {
+  .sneaker__navBar {
+    height: 5rem;
+  }
   .navBar__options {
     display: none;
     width: 100%;
@@ -401,5 +459,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .sneaker__overlay {
+    display: none;
+  }
+  .navBar__heading {
+    width: 9rem;
+  }
+  .profile__box {
+    width: 4rem;
+    height: 4rem;
+  }
+  .menu {
+    display: initial;
+    margin-right: 1rem;
+    height: 1.4rem;
+    width: 1.4rem;
+    background: none;
+    border: none;
+  }
+  .cart-box {
+    right: -2rem;
   }
 }

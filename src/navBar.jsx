@@ -1,12 +1,32 @@
 import cartIcon from "./images/icon-cart.svg";
 import profileImage from "./images/image-avatar.png";
-const Nav = ({ cartcounter, setVisible, visible }) => {
+const Nav = ({
+  cartcounter,
+  setVisible,
+  visible,
+  setvisibleHamMenu,
+  visibleHamMenu,
+}) => {
   return (
     <nav className="sneaker__navBar">
       <div className="neaker__nav-btn">
-        <h1 className="navBar__heading">
-          <img src="./src/images/logo.svg" alt="heading-logo" />
-        </h1>
+        <button
+          className="menu"
+          onClick={() => setvisibleHamMenu(!visibleHamMenu)}
+        >
+          <img
+            src="./src/images/icon-menu.svg"
+            alt="heading-logo"
+            className="profile__box-img"
+          />
+        </button>
+        <div className="navBar__heading">
+          <img
+            src="./src/images/logo.svg"
+            alt="heading-logo"
+            className="profile__box-img"
+          />
+        </div>
         <ul className="navBar__options">
           <li className="navBar__option">Collections</li>
           <li className="navBar__option">Men</li>

@@ -1,6 +1,11 @@
 import { useState } from "react";
 // import Carts from "./cart";
-const Section = ({ setcartCounter, visible }) => {
+const Section = ({
+  setcartCounter,
+  visible,
+  overlayVisible,
+  setOverlayVisible,
+}) => {
   const [active, setActive] = useState(1);
   // const [cart, setCart] = useState(0);
   const [counter, setCounter] = useState(0);
@@ -38,7 +43,10 @@ const Section = ({ setcartCounter, visible }) => {
   return (
     <section className="sneaker__section">
       <div className="sneaker__gallery">
-        <div className="sneaker__primary">
+        <div
+          className="sneaker__primary"
+          onClick={() => setOverlayVisible(!overlayVisible)}
+        >
           <button className="img-btn forward-btn" onClick={() => down()}>
             <img
               src="./src/images/icon-previous.svg"
