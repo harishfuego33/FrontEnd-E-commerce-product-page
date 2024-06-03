@@ -1,5 +1,5 @@
-import cartIcon from "./images/icon-cart.svg";
-import profileImage from "./images/image-avatar.png";
+import cartIcon from "../public/images/icon-cart.svg";
+import profileImage from "../public/images/image-avatar.png";
 const Nav = ({
   cartcounter,
   setVisible,
@@ -15,14 +15,14 @@ const Nav = ({
           onClick={() => setvisibleHamMenu(!visibleHamMenu)}
         >
           <img
-            src="./src/images/icon-menu.svg"
+            src="./public/images/icon-menu.svg"
             alt="heading-logo"
             className="profile__box-img"
           />
         </button>
         <div className="navBar__heading">
           <img
-            src="./src/images/logo.svg"
+            src="./public/images/logo.svg"
             alt="heading-logo"
             className="profile__box-img"
           />

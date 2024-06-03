@@ -6,7 +6,7 @@ import Slide from "./slide";
 const App = () => {
   const [cartcounter, setcartCounter] = useState(0);
   const [visible, setVisible] = useState(false);
-  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(true);
   const [visibleHamMenu, setvisibleHamMenu] = useState(false);
   return (
     <main className="sneaker__main">

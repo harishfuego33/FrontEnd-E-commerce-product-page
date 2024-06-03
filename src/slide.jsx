@@ -6,7 +6,7 @@ const Slide = ({ visibleHamMenu, setvisibleHamMenu }) => {
         onClick={() => setvisibleHamMenu(!visibleHamMenu)}
       >
         <div className="slide__close-btn">
-          <img src="./src/images/icon-close.svg" alt="close-button" />
+          <img src="./public/images/icon-close.svg" alt="close-button" />
         </div>
         <ul className="slide__options">
           <li className="slide__option">Collections</li>
